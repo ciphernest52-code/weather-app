@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-900 p-6 font-sans text-white">
+  <main class="mx-auto flex  max-w-4xl items-center">
+    <section class="grid w-full gap-6 rounded-3xl bg-slate-800 p-6 md:grid-cols-2">
+      <div class="flex flex-col justify-center">
+        <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Weather App</p>
+        <h1 class="mt-2 text-4xl font-bold">Check the weather</h1>
+        <p class="mt-3 text-slate-400">Enter a city to see current conditions.</p>
+        <form  class="mt-6 flex gap-2">
+          <label for="cityInput" class="sr-only">City name</label>
+          <input id="cityInput" name="city" type="text" placeholder="Enter city..." class="min-w-0 flex-1 rounded-xl bg-slate-700 px-4 py-3 outline-none focus:ring-2 focus:ring-cyan-300">
+          <button id="searchButton" type="submit" class="rounded-xl bg-cyan-300 px-4 font-bold text-slate-900">Search</button>
+        </form>
+        <p id="loading" class="mt-3 hidden text-sm text-cyan-300" role="status">Loading...</p>
+        <p id="errorMessage" class="mt-3 hidden text-sm text-rose-300" role="alert">City not found.</p>
+      </div>
+      <section id="weatherResult" class="hidden rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 p-6" aria-labelledby="weatherResultTitle">
+        <div class="flex justify-between">
+          <div>
+            <p class="text-sm ">Current weather</p>
+            <h2 id="cityNameText" class="text-3xl font-bold"></h2>
+            <p id="descText" class="capitalize text-blue-950/70"></p>
+          </div>
+          <span class="text-5xl" aria-hidden="true">☀️</span>
+        </div>
+        <p id="tempText" class="mt-8 text-2xl font-bold"></p>
+        <div class="mt-8 grid grid-cols-2 gap-3 text-sm">
+          <p id="windText" class="rounded-xl bg-white/20 p-3"></p>
+          <p id="humidityText" class="rounded-xl bg-white/20 p-3"></p>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="01.project.js" defer></script>
+</body>
+</html>
